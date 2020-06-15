@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+
+</head>
+<body>
     <div id="title">
         <h1 class="logo-title"><span style="color:yellow">FEDEXCHOICE</span> BANK</h1>
         <div id="nav">
             {% include "includes/navigation.html" %}
         </div>
     </div>
-
-</head>
-<body>
-    <div class="page">
-    {{ self.content() }}
+    <div id="page">
+        {{ self.content() }}
     </div>
-</body>
 {% include "includes/footer.html" %}
+</body>
 </html>
