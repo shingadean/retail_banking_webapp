@@ -173,10 +173,9 @@ footer{
     margin: 20px 0 0 0;
 }
 /* background page */
-.page{
-    background: black;
-    opacity: 0.3;
+#page{
+    background-color: #b4b4b4;
     height: 100%;
     position:relative;
-    color:black;
+    color:#000000;
 }
