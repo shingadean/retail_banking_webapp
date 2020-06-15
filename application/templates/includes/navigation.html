@@ -6,7 +6,7 @@
                     <li class="nav-item"><a href="account_management.html" class="nav-link">Account Management</a></li>
                     <li class="nav-item"><a href="status_details.html" class="nav-link">Status Details</a></li>
                     <li class="nav-item"><a href="account_operations.html" class="nav-link">Account Operation</a></li>
-                    <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="{{ url_for('login') }}" class="nav-link {% if login %} active {% endif %}">Login</a></li>
             </ul>
         </nav>
         <hr style="clear:both">

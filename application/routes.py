@@ -1,7 +1,12 @@
 from application import app
 from flask import render_template, request, json, Response, redirect, flash, url_for, session, jsonify
 from flask_restplus import Resource
+from application.data_country import states_list
+
+@app.route('/login')
+def login():
+    return render_template("login.html", login=True)
 
 @app.route('/create_customer')
 def create_customer():
-    return render_template("create_customer.html", title="Create Customer")
+    return render_template("create_customer.html", title="Create Customer", states=states_list)

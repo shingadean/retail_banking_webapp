@@ -2,9 +2,41 @@
 
 {% block content %}
 <div id="create-customer">
-    <h1 style="text-align:center">CREATE CUSTOMER SCREEN</h1>
-    <div class="submit-form">
-
-    </div>
+    <h1 class="customer-text">CREATE CUSTOMER</h1>
+    <form name="create" action="" method="post">
+        <tbody id="customer-form">
+            <table>
+                <tr>
+                    <td><label>Customer SSN Id<span style="color:red">*</span></label></td>
+                    <td><input name="customer-id" type="text" required="required"></td>
+                </tr>
+                <tr>
+                    <td><label>Customer Name<span style="color:red">*</span></label></td>
+                    <td><input name="customer-name" type="text" required="required"></td>
+                </tr>
+                <tr>
+                    <td><label>Age<span style="color:red">*</span></label></td>
+                    <td><input name="customer-age" type="text" required="required"></td>
+                </tr>
+                <tr>
+                    <td><label>Address<span style="color:red">*</span></label></td>
+                    <td><input name="customer-address" type="text" required="required"></td>
+                </tr>
+                <tr>
+                    <td><label>State<span style="color:red">*</span></label></td>
+                    <td>
+                        <select>
+                            {% for state in states %}
+                                <option>{{ state }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="REGISTER" class="btn-submit"></td><td><input type="reset" value="RESET" class="btn-submit"></td>
+                </tr>
+            </table>
+        </tbody>
+    </form>
 </div>
 {% endblock %}
