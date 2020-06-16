@@ -3,6 +3,13 @@ from flask import render_template, request, json, Response, redirect, flash, url
 from flask_restplus import Resource
 from application.data_country import states_list
 
+
+@app.route('/home')
+@app.route('/')
+def home():
+    return render_template('home.html', home=True)
+
+
 @app.route('/login')
 def login():
     return render_template("login.html", login=True)
@@ -10,3 +17,4 @@ def login():
 @app.route('/create_customer')
 def create_customer():
     return render_template("create_customer.html", title="Create Customer", states=states_list)
+

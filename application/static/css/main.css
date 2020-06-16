@@ -15,6 +15,7 @@ body {
     height: 100%;
     position: relative;
     margin:0px;
+    letter-spacing: 2px;
 }
 
 header {
@@ -209,6 +210,8 @@ table {
   border-collapse: separate;
   border-spacing: 0 15px;
 }
+
+
 /* login form */
 .row form {
     padding: 30px 200px;
@@ -219,3 +222,58 @@ table {
     text-align: center;
     padding: 20px;
 }
+/* login form */
+
+
+
+/* home page */
+
+#home h1{
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+#left-content {
+    position: relative;
+    width: 500px;
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
+    float: left;
+}
+#left-content .hs-text {
+    margin: -56px 5px 7px 6px;
+    padding: 136px 18px 0px 20px;
+    /* padding-right: 10px; */
+    width: 500px;
+}
+
+#left-content li{
+    display: block;
+}
+
+#right-content {
+    margin: 45px 55px;
+    background: #22242b;
+    padding: 25px 0px 5px;
+    width: 500px;
+    float: right;
+}
+#right-content .hero-form {
+    padding-top: 27px;
+    padding-right: 0px;
+    padding-left: 27px;
+}
+#right-content h2{
+    text-align: center;
+    padding-top: 10px;
+}
+#right-content li{
+    display: block;
+    color:yellow;
+}
+#right-content p{
+    color:yellow;
+}
+
+/* home page */
