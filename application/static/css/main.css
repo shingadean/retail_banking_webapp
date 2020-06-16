@@ -44,7 +44,7 @@ hr {
 }
 
 input[type=text], input[type=password] {
-    width: 59%;
+    width: 100%;
     padding: 10px;
     margin: 16px 0 5px 0;
     display: block;
@@ -57,25 +57,7 @@ input[type=text]:focus, input[type=password]:focus {
     outline: none;
 }
 
-.top-container {
-    background: #ccc;
-    padding:5px;
-    border-bottom:2px solid #0f0f0f;
-}
-.bottom-container {
-    background: #333;
-    padding:5px;
-    border-top:2px solid #0f0f0f;
-    position:relative;
-    bottom:0;
-}
 
-.container-term {
-    width:80%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-}
 .alert {
   padding: 20px;
   background-color: #FF6347; /* Red */
@@ -195,18 +177,22 @@ table {
 }
 
 
-/* create customer */
+/* create customer ## deposit amount ## withdraw amount ## update customer */
 #create-customer{
   max-width:500px;
   margin:0rem auto;
   padding:50px;
+  font-weight: bold;
 }
-td {
+#create-customer select{
+    width: 100px;
+}
+#create-customer td {
   width: 150px;
   text-align: center;
   padding: 10px;
 }
-table {
+#create-customer table {
   border-collapse: separate;
   border-spacing: 0 15px;
 }
@@ -238,7 +224,7 @@ table {
     position: relative;
     width: 500px;
     /* padding-right: 15px; */
-    /* padding-left: 15px; */
+    padding-left: 55px;
     float: left;
 }
 #left-content .hs-text {
@@ -261,7 +247,7 @@ table {
 }
 #right-content .hero-form {
     padding-top: 27px;
-    padding-right: 0px;
+    padding-right: 10px;
     padding-left: 27px;
 }
 #right-content h2{
@@ -277,3 +263,34 @@ table {
 }
 
 /* home page */
+
+/* delete account create account*/
+#account h2 {
+    text-align: center;
+    padding: 60px;
+    font-weight: bold;
+}
+
+#account form {
+    padding: 0px 83px 60px;
+    width: 50%;
+    margin: 34px 500px 46px;
+}
+#account li{
+    display:inline-flex;
+}
+
+#account input[type=text]{
+    width: 90%;
+    padding: 10px;
+    margin: 17px 0 5px 0;
+    display: block;
+    border: none;
+    background: #f1f1f1;
+}
+#account select{
+    width: 160px;
+}
+
+#account input[type=text]:focus{
+    background-color: #ddd;

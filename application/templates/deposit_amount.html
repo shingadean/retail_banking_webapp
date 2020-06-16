@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="create-customer">
+    <h1>CASH DEPOSIT</h1>
+    <br>
+    <form name="create" action="" method="post">
+        <tbody id="table-form">
+            <table>
+                <tr>
+                    <td><label>Customer Id:</label></td>
+                    <td><p>111111</p></td>
+                </tr>
+                <tr>
+                    <td><label>Account ID:</label></td>
+                    <td><p>2222222</p></td>
+                </tr>
+                <tr>
+                    <td><label>Account Type:</label></td>
+                    <td><p>Savings</p></td>
+                </tr>
+                <tr>
+                    <td><label>Balance:</label></td>
+                    <td><p>9000</p></td>
+                </tr>
+                <tr>
+                    <td><label>Deposit Amount:</label></td>
+                    <td><input type="text" placeholder="Amount"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Deposit Amount" class="btn-submit">
+                </tr>
+            </table>
+        </tbody>
+    </form>
+</div>
+{% endblock %}

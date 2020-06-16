@@ -2,15 +2,15 @@
  {% block content %}
 
 <div id="account">
-    <h2>Delete Account</h2>
-    <form name="delete" action="" method="post">
+    <h2>Create Account</h2>
+    <form name="create" action="" method="post">
         <div class="acc-id">
             <ul>
                 <li>
-                    <label>Account No:</label>
+                    <label>Customer ID:</label>
                 </li>
                 <li>
-                    <span><input type="text" placeholder="Account No"></span><br>
+                    <span><input type="text" placeholder="Customer ID"></span><br>
                 </li>
             </ul>
         </div><br>
@@ -22,8 +22,17 @@
                 <option>Savings</option>
             </select>
         </div><br>
+        <div>
+            <ul>
+                <li>
+                    <label>Deposit Amount:</label>
+                </li>
+                <li>
+                    <span><input type="text" placeholder="Amount"></span><br>
+                </li>
+        </div>
         <div style="padding-left:70px">
-            <input type="submit" value="DELETE ACCOUNT" class="btn-submit">
+            <input type="submit" value="CREATE ACCOUNT" class="btn-submit">
         </div>
     </form>
 </div>

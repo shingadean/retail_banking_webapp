@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="create-customer">
+    <h1>UPDATE CUSTOMER</h1>
+    <br>
+    <form name="create" action="" method="post">
+        <tbody id="table-form">
+            <table>
+                <tr>
+                    <td><label>Customer SSN Id:</label></td>
+                    <td><p>111111</p></td>
+                </tr>
+                <tr>
+                    <td><label>Customer ID:</label></td>
+                    <td><p>2222222</p></td>
+                </tr>
+                <tr>
+                    <td><label>Old Customer Name:</label></td>
+                    <td><p>Tom</p></td>
+                </tr>
+                <tr>
+                    <td><label>New Customer Name:</label></td>
+                    <td><input type="text" required></td>
+                </tr>
+
+                <tr>
+                    <td><label>Old Address:</label></td>
+                    <td><p>Street</p></td>
+                </tr>
+                <tr>
+                    <td><label>New Address:</label></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Old Age:</label></td>
+                    <td><p>21</p></td>
+                </tr>
+                <tr>
+                    <td><label>New Age:</label></td>
+                    <td>
+                        <select>
+                            {% for number in range(0,100) %}
+                                <option>
+                                    {{ number }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Deposit Amount" class="btn-submit">
+                </tr>
+            </table>
+        </tbody>
+    </form>
+</div>
+{% endblock %}
