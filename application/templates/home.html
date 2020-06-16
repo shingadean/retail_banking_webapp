@@ -50,10 +50,20 @@ competitive rates and fees</h2><br>
                     Branch – Visit your nearest Branch
                 </li>
             </ul><br>
-            <button class="btn-submit">>Send</button><br>
+            <button class="btn-submit">Send</button><br>
         </form>
 
     </div>
 </div>
 
 {% endblock %}
+
+<form name="login" action="login.php" method="get">
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+                <br>
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" required>
+                <br class="clear">
+                <input class="btn-submit" type="submit" name="submit" value="Login">
+            </form>

@@ -1,16 +1,30 @@
-
-
-    <header id="nav">
-        <nav class="nav-panel">
-            <ul class="nav nav-pills">
-                <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="customer_management.html" class="nav-link">Customer Management</a></li>
-                    <li class="nav-item"><a href="account_management.html" class="nav-link">Account Management</a></li>
-                    <li class="nav-item"><a href="status_details.html" class="nav-link">Status Details</a></li>
-                    <li class="nav-item"><a href="account_operations.html" class="nav-link">Account Operation</a></li>
-
-            </ul>
-        </nav>
-        <hr style="clear:both">
-    </header>
-
+<div class="navbar">
+  <a href="{{ url_for('home') }}" class="nav-link {% if index %}active{% endif %}">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Customer Management
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{{ url_for('create_customer') }}">Create Customer</a>
+      <a href="{{ url_for('update_customer') }}">Update Customer</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Account Management
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{{ url_for('create_account') }}">Create Account</a>
+      <a href="{{ url_for('delete_account') }}">Delete Account</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Account Operations
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{{ url_for('withdraw_amount') }}">Withdraw</a>
+      <a href="{{ url_for('deposit_amount') }}">Deposit</a>
+    </div>
+  </div>
+</div>

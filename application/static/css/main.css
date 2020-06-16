@@ -114,22 +114,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 /* navigation */
-#nav{
-    background: yellow;
-    padding: 10px;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-.nav-panel{
-    height: 50%;
-}
-.nav .nav-item{
-    padding:20px;
-}
-.nav-pills .nav-link.active{
-    color: #fff;
-    background-color: black;
-}
+
 /* footer */
 footer{
     position: fixed;
@@ -294,3 +279,84 @@ table {
 
 #account input[type=text]:focus{
     background-color: #ddd;
+}
+
+
+.navbar {
+  overflow: hidden;
+  background-color: #b4b4b461;
+  font-family: Arial;
+  padding: 0px 235px;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn{
+  background-color: #726a13;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #726a13;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.navbar .nav-link:active{
+    color: #fff;
+    background-color: #007bff;
+}
+
+a:active {
+  color: red;
+}

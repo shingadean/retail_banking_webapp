@@ -4,8 +4,9 @@ from flask_restplus import Resource
 from application.data_country import states_list
 
 
-@app.route('/home')
+
 @app.route('/')
+@app.route('/home')
 def home():
     return render_template('home.html', home=True)
 
