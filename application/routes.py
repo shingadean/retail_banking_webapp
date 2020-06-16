@@ -1,5 +1,5 @@
 from application import app
-from flask import render_template, request, json, Response, redirect, flash, url_for, session, jsonify
+from flask import render_template, request, json, Response, redirect, flash, url_for, session
 from flask_restplus import Resource
 from application.data_country import states_list
 
