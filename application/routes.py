@@ -41,3 +41,8 @@ def deposit_amount():
 def withdraw_amount():
     return render_template("withdraw_amount.html", title="Withdraw Cash")
 
+@app.route('/account_status')
+def account_status():
+    return render_template("account_status.html", title="account Status")
+
+

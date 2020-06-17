@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+table {
+  margin-left:auto;margin-right:auto;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 75%;
+}
+
+td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 6px;
+}
+ th {
+  font-color: yellow;
+  background-color: blue;
+  border: 1px solid black;
+  text-align: left;
+  padding: 6px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+</style>
+</head>
+<body>
+<table>
+<br>
+    <h1 style="text-align:center">Account Status</h1>
+    <br>
+
+  <tr>
+    <th>Customer ID</th>
+    <th>Account ID</th>
+    <th>Account type</th>
+      <th>Account Status</th>
+      <th>Last Updated</th>
+      <th>Operations</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+      <td></td>
+      <td></td>
+      <td>refresh</td>
+
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+      <td></td>
+      <td></td>
+      <td>refresh</td>
+
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+      <td></td>
+      <td></td>
+      <td>refresh</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+      <td></td>
+      <td></td>
+      <td>refresh</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+      <td></td>
+      <td></td>
+      <td>refresh</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+      <td></td>
+      <td></td>
+
+
+  </tr>
+</table>
+<tr><br><td><button onClick="window.location.reload();">Refresh </button></td><style>
+button{
+
+  background-color: #4CAF50;
+  width: 30%;
+  margin-left: 50%;
+  margin-right: 30%
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  display: inline-block;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4;
+  cursor: pointer;
+	}
+</style>
+
+
+</body>
+</html>
+{% endblock %}
