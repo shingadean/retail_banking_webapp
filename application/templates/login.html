@@ -6,14 +6,26 @@
         <h1>Login</h1><br>
         <div class="col-md-6 offset-md-3">
             <h3></h3>
-            <form name="login" action="login.php" method="get">
-                <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required>
+            <form name="login" action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <p>
+                        <b>{{ form.username.label }}</b><br>
+                        {{ form.username(size=35) }}
+                        {% for error in form.username.errors %}
+                            <span class="error-message">{{ error }}</span>
+                        {% endfor %}
+                </p>
                 <br>
-                <label for="password"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required>
-                <br class="clear">
-                <input class="btn-submit" type="submit" name="submit" value="Login">
+                <p>
+                    <b>{{ form.password.label }}</b><br>
+                        {{ form.password(size=35) }}
+                        {% for error in form.password.errors %}
+                            <span class="error-message">{{ error }}</span>
+                        {% endfor %}
+                </p>
+                <p>
+                    {{ form.submit() }}
+                </p>
             </form>
         </div>
     </div>

@@ -78,7 +78,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 
-.btn-submit {
+input#submit, .btn-submit {
     background-color: black;
     color: yellow;
     padding: 16px 20px;
@@ -88,7 +88,7 @@ input[type=text]:focus, input[type=password]:focus {
     opacity: 0.9;
     font-weight: bold;
 }
-.btn-submit:hover {
+input#submit, .btn-submit:hover {
     opacity: 1;
 }
 
@@ -282,6 +282,8 @@ table {
 }
 
 
+
+/* nav bar */
 .navbar {
   overflow: hidden;
   background-color: #b4b4b461;
@@ -339,6 +341,7 @@ table {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  background: #4f4f4f;
   text-align: left;
 }
 
@@ -348,15 +351,33 @@ table {
 }
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+.dropbtn.active, .dropdown:hover .dropdown-content {
   display: block;
-}
+  background-color: #726a13;
 
-.navbar .nav-link:active{
-    color: #fff;
-    background-color: #007bff;
 }
+.active{
+  background-color: #726a13;
+  color: white;
+}
+/* nav-bar */
 
-a:active {
+/* flash messages */
+.alert {
+  padding: 20px;
+  background-color: #FF6347; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+.alert-sucess {
+  padding: 20px;
+  background-color: #008000;
+  opacity: 0.5;
+  color: white;
+  margin-bottom: 15px;
+}
+.error-message {
+  /*background-color: #FF6347*/; /* Red */
   color: red;
+  margin-bottom: 15px;
 }

@@ -1,7 +1,7 @@
 <div class="navbar">
-  <a href="{{ url_for('home') }}" class="nav-link {% if index %}active{% endif %}">Home</a>
+  <a href="{{ url_for('home') }}" class="{% if home %}active{% endif %}">Home</a>
   <div class="dropdown">
-    <button class="dropbtn">Customer Management
+    <button class="dropbtn  {% if customer_management %}active{% endif %}">Customer Management
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="dropdown">
-    <button class="dropbtn">Account Management
+    <button class="dropbtn {% if account_management %}active{% endif %}" >Account Management
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="dropdown">
-    <button class="dropbtn">Account Operations
+    <button class="dropbtn {% if account_operation %}active{% endif %}">Account Operations
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
