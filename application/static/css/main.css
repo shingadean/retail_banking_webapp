@@ -369,7 +369,7 @@ table {
   color: white;
   margin-bottom: 15px;
 }
-.alert-sucess {
+.alert-success {
   padding: 20px;
   background-color: #008000;
   opacity: 0.5;
@@ -381,3 +381,4 @@ table {
   color: red;
   margin-bottom: 15px;
 }
+

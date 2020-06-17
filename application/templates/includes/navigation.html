@@ -1,30 +1,36 @@
 <div class="navbar">
   <a href="{{ url_for('home') }}" class="{% if home %}active{% endif %}">Home</a>
-  <div class="dropdown">
-    <button class="dropbtn  {% if customer_management %}active{% endif %}">Customer Management
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="{{ url_for('create_customer') }}">Create Customer</a>
-      <a href="{{ url_for('update_customer') }}">Update Customer</a>
+  {% if not session['username'] %}
+    <a href="{{ url_for('login') }}" class="{% if login %}active{% endif %}">Login</a>
+  {% endif %}
+  {% if session['username'] %}
+    <div class="dropdown">
+      <button class="dropbtn  {% if customer_management %}active{% endif %}">Customer Management
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="{{ url_for('create_customer') }}">Create Customer</a>
+        <a href="{{ url_for('update_customer') }}">Update Customer</a>
+      </div>
     </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn {% if account_management %}active{% endif %}" >Account Management
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="{{ url_for('create_account') }}">Create Account</a>
-      <a href="{{ url_for('delete_account') }}">Delete Account</a>
+    <div class="dropdown">
+      <button class="dropbtn {% if account_management %}active{% endif %}" >Account Management
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="{{ url_for('create_account') }}">Create Account</a>
+        <a href="{{ url_for('delete_account') }}">Delete Account</a>
+      </div>
     </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn {% if account_operation %}active{% endif %}">Account Operations
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="{{ url_for('withdraw_amount') }}">Withdraw</a>
-      <a href="{{ url_for('deposit_amount') }}">Deposit</a>
+    <div class="dropdown">
+      <button class="dropbtn {% if account_operation %}active{% endif %}">Account Operations
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="{{ url_for('withdraw_amount') }}">Withdraw</a>
+        <a href="{{ url_for('deposit_amount') }}">Deposit</a>
+      </div>
     </div>
-  </div>
+    <a href="{{ url_for('logout') }}">Logout</a>
+  {% endif %}
 </div>

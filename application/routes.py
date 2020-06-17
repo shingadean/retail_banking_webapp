@@ -2,8 +2,8 @@ from application import app
 from flask import render_template, request, json, Response, redirect, flash, url_for, session
 from flask_restplus import Resource
 from application.data_country import states_list
-from application.forms import LoginForm
-from application.models import Login
+from application.forms import LoginForm, CustomerForm
+from application.models import Login, Customer
 
 
 @app.route('/home')
@@ -12,28 +12,46 @@ def home():
 
 
 @app.route('/', methods=["GET", "POST"])
-@app.route('/login')
+@app.route('/login',methods=["GET", "POST"])
 def login():
+    if session.get('username'):
+        return redirect(url_for('home'))
     form = LoginForm()
     if form.validate_on_submit():
-
         username = form.username.data
         password = form.password.data
 
         login_form = Login.objects(username=username).first()
         if login_form and password:
-            flash("You are Logged IN")
-            return redirect("/home")
-    else:
-        flash("Sorry, something went wrong.", "danger")
-
+            flash(f"{login_form.first_name}, You are Logged IN", 'success')
+            session['username'] = login_form.username
+            session['first_name'] = login_form.first_name
+            return redirect(url_for("home"))
+        else:
+            flash("Sorry, something went wrong.", "danger")
     return render_template("login.html", title="Login", form=form, login=True)
 
 
-@app.route('/create_customer')
+@app.route('/create_customer', methods=['GET','POST'])
 def create_customer():
-    return render_template("create_customer.html", title="Create Customer", states=states_list,
-                           customer_management=True)
+    form = CustomerForm()
+    if form.validate_on_submit():
+        ssn_id = form.customerId.data
+        name = form.customer_name.data
+        age = form.age.data
+        address = form.address.data
+        state= form.state.data
+        if state is not None:
+
+            customer = Customer(customerId=ssn_id, customer_name=name, age=age, address=address, state=state)
+            customer.save()
+            flash("CUSTOMER CREATED SUCCESSFULLY", "success")
+            return redirect(url_for('create_customer'))
+        else:
+            flash("Sorry, Something went wrong","danger")
+
+    return render_template("create_customer.html", title="Create Customer",
+                           customer_management=True, form=form)
 
 
 @app.route('/update_customer')
@@ -59,8 +77,15 @@ def deposit_amount():
 @app.route('/withdraw_amount')
 def withdraw_amount():
     return render_template("withdraw_amount.html", title="Withdraw Cash", account_operation=True)
+
+
 @app.route('/account_status')
 def account_status():
     return render_template("account_status.html", title="account Status")
 
-
+@app.route('/logout')
+def logout():
+    session['username'] = False
+    session.pop('first_name', None)
+    flash("You are logged out", 'alert')
+    return redirect(url_for('home'))

@@ -4,37 +4,48 @@
 <div id="create-customer">
     <h1>CREATE CUSTOMER</h1>
     <br>
-    <form name="create" action="" method="post">
+    <form name="create" action="{{ url_for('create_customer') }}" method="post" novalidate>
+        {{ form.hidden_tag() }}
         <tbody id="table-form">
             <table>
                 <tr>
-                    <td><label>Customer SSN Id<span style="color:red">*</span></label></td>
-                    <td><input name="customer-id" type="text" required="required"></td>
+                    <td><b>{{ form.customerId.label }}<span style="color:red">*</span></b></td>
+                    <td>{{ form.customerId(size=10) }}</td>
+                    {% for error in form.customerId.errors %}
+                            <p class="error-message">{{ error }}</p>
+                    {% endfor %}
                 </tr>
                 <tr>
-                    <td><label>Customer Name<span style="color:red">*</span></label></td>
-                    <td><input name="customer-name" type="text" required="required"></td>
+                    <td><b>{{ form.customer_name.label }}<span style="color:red">*</span></b></td>
+                    <td>{{ form.customer_name(size=35) }}</td>
+                    {% for error in form.customer_name.errors %}
+                            <span class="error-message">{{ error }}</span>
+                    {% endfor %}
                 </tr>
                 <tr>
-                    <td><label>Age<span style="color:red">*</span></label></td>
-                    <td><input name="customer-age" type="text" required="required"></td>
+                    <td><b>{{ form.age.label }}<span style="color:red">*</span></b></td>
+                    <td>{{ form.age(size=2) }}</td>
+                    {% for error in form.age.errors %}
+                            <span class="error-message">{{ error }}</span>
+                    {% endfor %}
                 </tr>
                 <tr>
-                    <td><label>Address<span style="color:red">*</span></label></td>
-                    <td><input name="customer-address" type="text" required="required"></td>
+                    <td><b>{{ form.address.label }}<span style="color:red">*</span></b></td>
+                    <td>{{ form.address(size=10) }}</td>
+                    {% for error in form.address.errors %}
+                            <span class="error-message">{{ error }}</span>
+                    {% endfor %}
                 </tr>
                 <tr>
-                    <td><label>State<span style="color:red">*</span></label></td>
-                    <td>
-                        <select>
-                            {% for state in states %}
-                                <option>{{ state }}</option>
-                            {% endfor %}
-                        </select>
-                    </td>
+                    <td><b>{{ form.state.label }}<span style="color:red">*</span></b></td>
+                    <td>{{ form.state(size=10) }}</td>
+                    {% for error in form.address.errors %}
+                            <span class="error-message">Age {{ error }}</span>
+                    {% endfor %}
                 </tr>
                 <tr>
-                    <td><input type="submit" value="REGISTER" class="btn-submit"></td><td><input type="reset" value="RESET" class="btn-submit"></td>
+                    <td><b>{{ form.submit() }}</b></td>
+                    <td><input type="reset" value="RESET" class="btn-submit"></td>
                 </tr>
             </table>
         </tbody>
