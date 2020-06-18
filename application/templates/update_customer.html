@@ -4,52 +4,33 @@
 <div id="create-customer">
     <h1>UPDATE CUSTOMER</h1>
     <br>
-    <form name="create" action="" method="post">
+    <form name="create" action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
         <tbody id="table-form">
             <table>
                 <tr>
-                    <td><label>Customer SSN Id:</label></td>
-                    <td><p>111111</p></td>
+                    <td>{{ form.customerId.label }}:</td>
+                    <td>{{ form.customerId}}</td>
                 </tr>
                 <tr>
-                    <td><label>Customer ID:</label></td>
-                    <td><p>2222222</p></td>
-                </tr>
-                <tr>
-                    <td><label>Old Customer Name:</label></td>
-                    <td><p>Tom</p></td>
-                </tr>
-                <tr>
-                    <td><label>New Customer Name:</label></td>
-                    <td><input type="text" required></td>
+                    <td>{{ form.customer_name.label }}</td>
+                    <td>{{ form.customer_name }}</td>
                 </tr>
 
                 <tr>
-                    <td><label>Old Address:</label></td>
-                    <td><p>Street</p></td>
+                    <td>{{ form.address.label }}:</td>
+                    <td>{{ form.address }}</td>
                 </tr>
                 <tr>
-                    <td><label>New Address:</label></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td><label>Old Age:</label></td>
-                    <td><p>21</p></td>
-                </tr>
-                <tr>
-                    <td><label>New Age:</label></td>
+                    <td>{{ form.age.label }}</td>
                     <td>
-                        <select>
-                            {% for number in range(0,100) %}
-                                <option>
-                                    {{ number }}
-                                </option>
-                            {% endfor %}
-                        </select>
+                        {{ form.age }}
                     </td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Deposit Amount" class="btn-submit">
+                    <td>
+                    {{ form.submit() }}
+                    </td>
                 </tr>
             </table>
         </tbody>

@@ -3,36 +3,39 @@
 
 <div id="account">
     <h2>Create Account</h2>
-    <form name="create" action="" method="post">
+    <form name="create" action="" method="post" novalidate>
         <div class="acc-id">
             <ul>
                 <li>
-                    <label>Customer ID:</label>
+                    <label><b>{{ form.customerId.label }}:</b></label>
                 </li>
                 <li>
-                    <span><input type="text" placeholder="Customer ID"></span><br>
+                    <span>{{ form.customerId }}</span><br>
                 </li>
             </ul>
         </div><br>
         <div>
-            <label>Account Type:</label>
-            <select>
-                <option>Select</option>
-                <option>Current</option>
-                <option>Savings</option>
-            </select>
+            <ul>
+                <li>
+                    <label><b>{{ form.account_type.label }}:</b></label>
+                </li>
+                <li>
+                    <span>{{ form.account_type }}</span><br>
+                </li>
+            </ul>
+
         </div><br>
         <div>
             <ul>
                 <li>
-                    <label>Deposit Amount:</label>
+                    <label><b>{{ form.deposit.label }}</b></label>
                 </li>
                 <li>
-                    <span><input type="text" placeholder="Amount"></span><br>
+                    <span>{{ form.deposit }}:</span><br>
                 </li>
         </div>
         <div style="padding-left:70px">
-            <input type="submit" value="CREATE ACCOUNT" class="btn-submit">
+            {{ form.submit() }}
         </div>
     </form>
 </div>

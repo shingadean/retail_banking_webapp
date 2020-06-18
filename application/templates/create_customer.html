@@ -38,14 +38,12 @@
                 </tr>
                 <tr>
                     <td><b>{{ form.state.label }}<span style="color:red">*</span></b></td>
-                    <td>{{ form.state(size=10) }}</td>
-                    {% for error in form.address.errors %}
-                            <span class="error-message">Age {{ error }}</span>
-                    {% endfor %}
+                    <td>
+                        {{ form.state }}
+                    </td>
                 </tr>
                 <tr>
-                    <td><b>{{ form.submit() }}</b></td>
-                    <td><input type="reset" value="RESET" class="btn-submit"></td>
+                    <td><b>{{ form.submit() }}</b></td><td><input type="reset" value="RESET" class="btn-submit"></td>
                 </tr>
             </table>
         </tbody>
